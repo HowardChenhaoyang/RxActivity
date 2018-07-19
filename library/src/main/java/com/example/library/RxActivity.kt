@@ -11,7 +11,7 @@ fun FragmentActivity.startActivityWithCallBack(intent: Intent, requestCode: Int,
         supportFragmentManager
                 .beginTransaction()
                 .add(fragment, fragmentTag)
-                .commitNowAllowingStateLoss()//此处采用commitAllowingStateLoss完全没问题
+                .commitNowAllowingStateLoss()//此处采用commitNowAllowingStateLoss
     }
     fragment!!.onActivityResult = { requestCode, resultCode, data ->
         callBack(ActivityBackWrapper(data, requestCode, resultCode))
