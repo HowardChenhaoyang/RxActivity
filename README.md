@@ -36,5 +36,12 @@ class BaseActivity: AppCompatActivity() {
 
 解决方案2：fragment拥有自己的生命周期和onActivityResult回调。我们可以借助fragment来实现对activity的生命周期的监听。可以clone本项目查看具体实现。
 
+使用方法：
+```
+startActivityWithCallBack(Intent(this, SecondActivity::class.java), 1) { callBackWrapper ->
+    //处理回调
+}
+```
+
 附：1. glide中对此也有具体的应用，通过借助fragment，在activity销毁之后，停止对图片的网络请求。
    2. 6.0之后的动态权限获取也可以采用此方法。
