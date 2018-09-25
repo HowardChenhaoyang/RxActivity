@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        fragmentManager.beginTransaction().add(MainAppFragment(),"tag").commit()
+//        supportFragmentManager.beginTransaction().add(MainFragment(),"tag").commit()
         findViewById<View>(R.id.textView).setOnClickListener {
             startActivityWithCallBack(Intent(this, SecondActivity::class.java), 1) {
                 Toast.makeText(this, "从 secondActivity返回，返回码是 ${it.resultCode}", Toast.LENGTH_LONG).show()
